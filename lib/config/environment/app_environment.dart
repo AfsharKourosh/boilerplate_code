@@ -1,9 +1,8 @@
 /*
-Environment.production
-Environment.development
-Environment.staging
+enum AppEnvironment {
 
-baseUrl
-apiKey
-appName
+  development,
+  staging,
+  production,
+}
 */

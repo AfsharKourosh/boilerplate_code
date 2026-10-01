@@ -1,0 +1,94 @@
+/*
+///controls how your app runs and debugs(
+// for:
+// -Entry point (program): which main file to run
+// -Flavors (args): --flavor, --dart-define, --dart-define-from-file
+// -Device or platform: deviceId, or web-specific flags like --web-port and --web-renderer
+// -Run mode (flutterMode): debug, profile, or release
+// -Working directory (cwd): important in monorepos)
+
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Kelid Local",
+            "request": "launch",
+            "type": "dart",
+            "toolArgs": [
+                "--dart-define=ENV=local"
+            ]
+        },
+    {
+      "name": "Dev",
+      "request": "launch",
+      "type": "dart",
+      "program": "lib/main.dart",
+      "args": [
+        "--flavor",
+        "dev",
+        "--dart-define=ENV=development",
+        "--dart-define=BASE_URL=https://dev-api.example.com"
+      ]
+    },
+    {
+      "name": "Stage",
+      "request": "launch",
+      "type": "dart",
+      "program": "lib/main.dart",
+      "args": [
+        "--flavor",
+        "stage",
+        "--dart-define=ENV=staging",
+        "--dart-define=BASE_URL=https://stage-api.example.com"
+      ]
+    },
+    {
+      "name": "Prod",
+      "request": "launch",
+      "type": "dart",
+      "program": "lib/main.dart",
+      "args": [
+        "--flavor",
+        "prod",
+        "--dart-define=ENV=production",
+        "--dart-define=BASE_URL=https://api.example.com"
+      ]
+    }
+        {
+            "name": "curriculum_vitae",
+            "request": "launch",
+            "type": "dart",
+            "args": [
+                "--no-pub"
+            ]
+        },
+        {
+            "name": "curriculum_vitae (profile mode)",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "curriculum_vitae (release mode)",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        }
+    ]
+}
+    -------------------------------------------------
+    flutter build appbundle \
+  --flavor prod \
+  --dart-define=ENV=production \
+  --dart-define=BASE_URL=https://api.example.com
+  ---------------------------------------------------------
+  flutter build apk \
+  --flavor dev \
+  --dart-define=ENV=development \
+  --dart-define=BASE_URL=https://dev-api.example.com
+  ---------------------------------------------------------
+  flutter run --flavor dev --dart-define=ENVIRONMENT=development --dart-define=BASE_URL=https://dev-api.example.com --no-pub
+    */

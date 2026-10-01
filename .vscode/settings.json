@@ -1,0 +1,69 @@
+/*
+///controls how the editor behaves in this workspace
+{
+
+
+  // ── Editor: global ──
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+  "editor.detectIndentation": false,
+  "editor.rulers": [80],
+  "editor.bracketPairColorization.enabled": true,
+  "editor.guides.bracketPairs": "active",
+  "editor.suggest.snippetsPreventQuickSuggestions": false,
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true,
+  "files.eol": "\n",
+
+  // ── Dart / Flutter language block ──
+  "[dart]": {
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true,
+    "editor.selectionHighlight": false,
+    "editor.suggest.snippetsPreventQuickSuggestions": false,
+    "editor.suggestSelection": "first",
+    "editor.tabCompletion": "onlySnippets",
+    "editor.wordBasedSuggestions": "off",
+    "editor.codeActionsOnSave": {
+      "source.fixAll": "explicit",
+      "source.organizeImports": "explicit"
+    }
+  },
+
+  // ── Dart extension ──
+  "dart.flutterSdkPath": "C:\\Users\\Kourosh\\AppData\\Local\\src\\flutter",
+  "dart.lineLength": 80,
+  "dart.closingLabels": true,
+  "dart.previewFlutterUiGuides": true,
+  "dart.previewFlutterUiGuidesCustomTracking": true,
+  "dart.showTodos": true,
+  "dart.enableSnippets": true,
+  "dart.insertArgumentPlaceholders": false,
+  "dart.updateImportsOnRename": true,
+  "dart.runPubGetOnPubspecChanges": "always",
+  "dart.openDevTools": "never",
+  "dart.debugExternalPackageLibraries": false,
+  "dart.debugSdkLibraries": false,
+  "dart.hotReloadOnSave": "manual",
+  "dart.warnWhenEditingFilesOutsideWorkspace": true,
+
+  // ── Noise reduction ──
+  "files.exclude": {
+    "**/*.g.dart": true,
+    "**/*.freezed.dart": true,
+    "**/*.mocks.dart": true
+  },
+  "search.exclude": {
+    "**/build": true,
+    "**/.dart_tool": true,
+    "**/*.g.dart": true,
+    "**/*.freezed.dart": true
+  },
+  "files.watcherExclude": {
+    "**/build/**": true,
+    "**/.dart_tool/**": true
+  }
+
+
+}
+*/

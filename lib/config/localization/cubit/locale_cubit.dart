@@ -1,9 +1,35 @@
 /*
 class LocaleCubit extends Cubit<Locale?> {
-  LocaleCubit() : super(null);
+  LocaleCubit(this._storage) : super(null);
 
-  void setLocale(Locale locale) => emit(locale);
-  void setSystem() => emit(null);
+  final LocalStorage _storage;
+
+  static const _localeKey = 'locale';
+
+  Future<void> loadLocale() async {
+    final languageCode = _storage.getString(_localeKey);
+
+    if (languageCode == null) {
+      emit(null);
+      return;
+    }
+
+    emit(Locale(languageCode));
+  }
+
+  Future<void> setLocale(Locale locale) async {
+    await _storage.setString(
+      _localeKey,
+      locale.languageCode,
+    );
+
+    emit(locale);
+  }
+
+  Future<void> useSystemLocale() async {
+    await _storage.remove(_localeKey);
+    emit(null);
+  }
 }
 
 

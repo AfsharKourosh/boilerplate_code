@@ -1,8 +1,7 @@
-/*
 import 'package:flutter/material.dart';
 
-void main()async {
- WidgetsFlutterBinding.ensureInitialized();
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
 
   await setupDependencies();
   runApp(const MyApp());
@@ -13,7 +12,10 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
+      locale: context.watch<LocaleCubit>().state,
+      supportedLocales: AppLocalizations.supportedLocales,
+      localizationsDelegates: AppLocalizations.localizationsDelegates,
       title: 'Flutter Demo',
       theme: ThemeData(colorScheme: .fromSeed(seedColor: Colors.deepPurple)),
       home: const MyHomePage(),
@@ -59,4 +61,3 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
-*/

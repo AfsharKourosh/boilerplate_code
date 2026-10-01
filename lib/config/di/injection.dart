@@ -12,6 +12,12 @@ Future<void> initDependencies() async {
     EnvironmentLoader.load(),
   );
 
+  sl.registerLazySingleton<GoRouter>(
+  () => createAppRouter(
+    // dependencies
+  ),
+);
+
   await setupNetworkDependencies(sl);
   
   await setupStorageDependencies(sl);

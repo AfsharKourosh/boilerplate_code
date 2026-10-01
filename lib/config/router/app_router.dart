@@ -1,50 +1,53 @@
 /*
-import 'package:flutter/material.dart';
-import 'package:grocery/core/router/app_routes.dart';
-import 'package:grocery/feature/login/presentation/screen/login_screen.dart';
-import 'package:grocery/feature/otp/presentation/screens/otp_screen.dart';
+import 'package:go_router/go_router.dart';
 
-class AppRouter {
-  static Route<dynamic> generateRoute(RouteSettings settings) {
-    switch (settings.name) {
-      case AppRoutes.otp:
-        // final args = settings.arguments as OtpArguments;
+import 'app_routes.dart';
 
-        return _page(OtpScreen(/*phone: args.phone, name: args.name*/));
-      //PageRouteBuilder
-      //custom routing
-      case AppRoutes.login:
-        return _page(const LoginScreen());
-      default:
-        return _errorRoute(settings.name);
-    }
-  }
+final GoRouter appRouter = GoRouter(
+  initialLocation: AppRoutes.home,
+  routes: [
+    GoRoute(
+      path: AppRoutes.home,
+      name: RouteNames.home,
+      builder: (context, state) {
+        return const HomePage();
+      },
+    ),
+  ],
+);
+---------------------------------------------------
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
 
-  static MaterialPageRoute _page(Widget page) {
-    return MaterialPageRoute(builder: (_) => page);
-  }
-
-  static MaterialPageRoute _errorRoute(String? route) {
-    return MaterialPageRoute(
-      builder: (_) =>
-          Scaffold(body: Center(child: Text('Route "$route" not found'))),
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp.router(
+      routerConfig: appRouter,
     );
   }
 }
-//GoRoute
-class AppRoutes {
-  GoRouter getRouter() => _router;
+-------------------------------------------------------
+app_routes.dart
+    → path constants
 
-  final GoRouter _router = GoRouter(
-    routes: <RouteBase>[
-      GoRoute(
-        path: '/',
-        name: RoutesName.splashPage,
-        builder: (BuildContext context, GoRouterState state) {
-          return const SplashPage();
-        },
-      ),
-         ],
-  );
-}
+route_names.dart
+    → route name constants
+
+app_router.dart
+    → GoRouter configuration
+
+MaterialApp.router
+    → مصرف‌کننده GoRouter
+    ---------------------------------
+    when routes in features
+
+
+    
+    final GoRouter appRouter = GoRouter(
+  routes: [
+    ...authRoutes,
+    ...homeRoutes,
+    ...profileRoutes,
+  ],
+);
 */

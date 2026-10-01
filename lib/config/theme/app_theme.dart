@@ -1,16 +1,24 @@
-// theme: ThemeData(colorScheme: .fromSeed(seedColor: Colors.deepPurple)),
 /*
 import 'package:flutter/material.dart';
 
-class AppTheme {
-  AppTheme._();
+abstract final class AppTheme {
+
 
   static final ThemeData light = _buildLightTheme();
   static final ThemeData dark = _buildDarkTheme();
 
 
 
-static ThemeData _buildLightTheme(){return ThemeData();}
+static ThemeData _buildLightTheme(){
+    final colorScheme = ColorScheme.fromSeed(
+      seedColor: AppColors.seed,
+      brightness: Brightness.light,
+    );
+
+return ThemeData(   
+      colorScheme: colorScheme,
+      textTheme: AppTextStyles.textTheme,
+      useMaterial3: true,);}
 static ThemeData _buildDarkTheme(){return ThemeData();}
 
 }

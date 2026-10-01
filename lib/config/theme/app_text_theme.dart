@@ -1,8 +1,16 @@
 /*
+Localization
+      +
+Font
+      ↓
+AppTextStyles
+      ↓
+AppTheme
+
+
 import 'package:flutter/material.dart';
 
-class AppTextThemes {
-  AppTextThemes._();
+abstract final class AppTextThemes {
 
   static TextTheme light = const TextTheme(
  

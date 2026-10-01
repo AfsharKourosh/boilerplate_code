@@ -1,7 +1,7 @@
 /*
 import 'package:get_it/get_it.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-
+///abstract final class
 void setupStorageDependencies(GetIt sl) {
   sl.registerLazySingleton<LocalStorage>(
     () => LocalStorageImpl(sl()),

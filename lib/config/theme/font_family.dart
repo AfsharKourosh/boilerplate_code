@@ -1,6 +1,5 @@
 /*
-class FontFamily {
-  FontFamily._();
+abstract final class FontFamily {
   static const String iranYekanRegular = 'IRANYekanRegular';
 }
 */

@@ -13,7 +13,17 @@ final GoRouter appRouter = GoRouter(
         return const HomePage();
       },
     ),
+        GoRoute(
+      path: AppRoutes.login,
+      name: RouteNames.login,
+      builder: (context, state) {
+        return const LoginPage();
+      },
+    ),
   ],
+    errorBuilder: (context, state) {
+    return const NotFoundPage();
+  },
 );
 ---------------------------------------------------
 class MyApp extends StatelessWidget {

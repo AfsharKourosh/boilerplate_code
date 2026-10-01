@@ -3,7 +3,7 @@ import 'package:get_it/get_it.dart';
 
 import 'network_module.dart';
 import 'storage_module.dart';
-
+///////////////////////////////////registerLazySingleton
 final sl = GetIt.instance;
 
 Future<void> initDependencies() async {
@@ -17,7 +17,9 @@ Future<void> initDependencies() async {
     // dependencies
   ),
 );
-
+sl.registerLazySingleton<ApiClient>(
+  () => DioApiClient(sl<Dio>()),
+  
   await setupNetworkDependencies(sl);
   
   await setupStorageDependencies(sl);

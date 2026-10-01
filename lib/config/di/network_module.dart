@@ -13,8 +13,18 @@ void setupNetworkDependencies(GetIt sl) {
       ),
     );
 
-    dio.interceptors.add(LogInterceptor(requestBody: true, responseBody: true));
+    dio.interceptors.addAll(
+      AuthInterceptor(
+        sl<SecureStorage>(),
+      ),
+    );
 
+
+    if (sl<EnvironmentConfig>().isDebug) {
+      dio.interceptors.add(
+        LoggerInterceptor(),
+      );
+    }
     return dio;
   });
 }

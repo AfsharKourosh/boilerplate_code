@@ -1,11 +1,13 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   // await setupDependencies();
   runApp(
-    MaterialApp.router(
+    CupertinoApp.router(
+      // debugShowCheckedModeBanner: kDebugMode,
+      // scrollBehavior:CupertinoScrollBehavior() ,
       // theme: AppTheme.light,
       // darkTheme: AppTheme.dark,
       // themeMode: ThemeMode.system,

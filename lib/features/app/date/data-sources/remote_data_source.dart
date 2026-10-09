@@ -11,16 +11,23 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
   final ApiClient apiClient;
 
   @override
-  Future<OtpResponseModel> otp(
-    OtpRequestModel request,
-  ) async {
+  Future<OtpResponse> otp(String phoneNumber) async {
     final response = await apiClient.post<Map<String, dynamic>>(
-      'user/otp/',
-      data: request.toJson(),
+      'auth/send/otp/',
+      data: {
+        'phone_number': phoneNumber,
+      },
     );
 
-    return OtpResponseModel.fromJson(
-      response.data!,
+    final responseData = response.data;
+
+    if (responseData == null ||
+        responseData['data'] is! Map<String, dynamic>) {
+      throw const FormatException('Invalid OTP response format');
+    }
+
+    return OtpResponse.fromJson(
+      responseData['data'] as Map<String, dynamic>,
     );
   }
 }

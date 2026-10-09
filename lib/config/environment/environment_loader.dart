@@ -11,6 +11,9 @@ class EnvironmentLoader {
 
   static EnvironmentConfig load() {
     return EnvironmentConfig(
+        if (baseUrl.trim().isEmpty) {
+      throw StateError('BASE_URL must be provided.');
+    }
       environment: switch (environment) {
         'development' => AppEnvironment.development,
         'staging' => AppEnvironment.staging,

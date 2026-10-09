@@ -14,18 +14,19 @@ core/
         ----------------------------------------
 
 
-        abstract interface class ApiClient {
-  Future<dynamic> get(
+abstract interface class ApiClient {
+  Future<Response<T>> get<T>(
     String path, {
     Map<String, dynamic>? queryParameters,
   });
 
-  Future<dynamic> post(
+  Future<Response<T>> post<T>(
     String path, {
     dynamic data,
     Map<String, dynamic>? queryParameters,
   });
-    Future<Response<T>> put<T>(
+
+  Future<Response<T>> put<T>(
     String path, {
     dynamic data,
     Map<String, dynamic>? queryParameters,

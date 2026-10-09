@@ -7,7 +7,7 @@ import 'storage_module.dart';
 final sl = GetIt.instance;
 
 Future<void> initDependencies() async {
-
+ // Environment
   sl.registerSingleton<EnvironmentConfig>(
     EnvironmentLoader.load(),
   );

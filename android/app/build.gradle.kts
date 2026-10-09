@@ -36,9 +36,10 @@ android {
             signingConfig = signingConfigs.getByName("debug")
         }
     }
-        flavorDimensions += "environment"
+/*
+  flavorDimensions += "environment"
 
-/*  
+
   productFlavors {
         create("dev") {
             dimension = "environment"
@@ -56,7 +57,7 @@ android {
             dimension = "environment"
         }
     }
-    */
+*/
 }
 
 kotlin {

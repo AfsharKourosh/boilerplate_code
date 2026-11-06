@@ -1,10 +1,10 @@
 /*
-class OtpRequestModel {
+class RequestModel {
   final String phone;
   final String deviceId;
   final String platform;
 
-  const OtpRequestModel({
+  const RequestModel({
     required this.phone,
     required this.deviceId,
     required this.platform,
